@@ -23,6 +23,14 @@ module ActiveRecord
         sql
       end
 
+      # IMMUNIO: Add current_scope methods so we can call the #name method on
+      # the relation created for this class.
+      def current_scope
+      end
+
+      def current_scope=(scope)
+      end
+
       def sanitize_sql_for_order(sql)
         sql
       end

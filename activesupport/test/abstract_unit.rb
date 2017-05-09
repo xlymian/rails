@@ -2,6 +2,8 @@ ORIG_ARGV = ARGV.dup
 
 require "active_support/core_ext/kernel/reporting"
 
+require File.expand_path('../../../load_paths', __FILE__)
+
 silence_warnings do
   Encoding.default_internal = Encoding::UTF_8
   Encoding.default_external = Encoding::UTF_8

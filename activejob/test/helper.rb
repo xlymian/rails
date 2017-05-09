@@ -14,3 +14,5 @@ else
 end
 
 require "active_support/testing/autorun"
+
+require File.expand_path('../../../load_paths', __FILE__)

@@ -10,6 +10,8 @@ require "active_support/logger"
 require "support/config"
 require "support/connection"
 
+require File.expand_path('../../../../load_paths', __FILE__)
+
 # TODO: Move all these random hacks into the ARTest namespace and into the support/ dir
 
 Thread.abort_on_exception = true

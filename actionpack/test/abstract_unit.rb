@@ -4,6 +4,8 @@ $:.unshift(File.dirname(__FILE__) + "/fixtures/alternate_helpers")
 
 require "active_support/core_ext/kernel/reporting"
 
+require File.expand_path('../../../load_paths', __FILE__)
+
 # These are the normal settings that will be set up by Railties
 # TODO: Have these tests support other combinations of these values
 silence_warnings do

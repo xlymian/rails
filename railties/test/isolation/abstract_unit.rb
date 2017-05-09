@@ -14,6 +14,8 @@ require "active_support/testing/autorun"
 require "active_support/testing/stream"
 require "active_support/test_case"
 
+require File.expand_path('../../../../load_paths', __FILE__)
+
 RAILS_FRAMEWORK_ROOT = File.expand_path("#{File.dirname(__FILE__)}/../../..")
 
 # These files do not require any others and are needed

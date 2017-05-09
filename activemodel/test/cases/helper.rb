@@ -1,5 +1,7 @@
 require "active_model"
 
+require File.expand_path('../../../../load_paths', __FILE__)
+
 # Show backtraces for deprecated behavior for quicker cleanup.
 ActiveSupport::Deprecation.debug = true
 

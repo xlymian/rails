@@ -1,6 +1,8 @@
 require "action_cable"
 require "active_support/testing/autorun"
 
+require File.expand_path('../../../load_paths', __FILE__)
+
 require "puma"
 require "mocha/setup"
 require "rack/mock"

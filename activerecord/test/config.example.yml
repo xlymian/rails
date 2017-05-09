@@ -17,9 +17,13 @@ connections:
 
   jdbcmysql:
     arunit:
+      host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] || 'localhost' %>
+      port: <%= ENV['MYSQL_PORT_3306_TCP_PORT'] || 3306 %>
       username: rails
       encoding: utf8
     arunit2:
+      host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] || 'localhost' %>
+      port: <%= ENV['MYSQL_PORT_3306_TCP_PORT'] || 3306 %>
       username: rails
       encoding: utf8
 
@@ -53,10 +57,14 @@ connections:
 
   mysql2:
     arunit:
+      host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] || 'localhost' %>
+      port: <%= ENV['MYSQL_PORT_3306_TCP_PORT'] || 3306 %>
       username: rails
       encoding: utf8
       collation: utf8_unicode_ci
     arunit2:
+      host: <%= ENV['MYSQL_PORT_3306_TCP_ADDR'] || 'localhost' %>
+      port: <%= ENV['MYSQL_PORT_3306_TCP_PORT'] || 3306 %>
       username: rails
       encoding: utf8
 
