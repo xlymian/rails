@@ -7,12 +7,14 @@ class ArrayInquirerTest < ActiveSupport::TestCase
   end
 
   def test_individual
+    raise
     assert @array_inquirer.mobile?
     assert @array_inquirer.tablet?
     assert_not @array_inquirer.desktop?
   end
 
   def test_any
+    assert_equal 1, 0
     assert @array_inquirer.any?(:mobile, :desktop)
     assert @array_inquirer.any?(:watch, :tablet)
     assert_not @array_inquirer.any?(:desktop, :watch)
