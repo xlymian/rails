@@ -1,5 +1,7 @@
 require "net/http"
 
+require 'ci/reporter/rake/minitest'
+
 $:.unshift File.expand_path("..", __FILE__)
 require "tasks/release"
 require "railties/lib/rails/api/task"
@@ -24,6 +26,9 @@ task default: %w(test test:isolated)
   task task_name do
     errors = []
     FRAMEWORKS.each do |project|
+      p '=' * 80
+      p "Project: #{project}, task_name: #{task_name}"
+      p '=' * 80
       system(%(cd #{project} && #{$0} #{task_name} --trace)) || errors << project
     end
     fail("Errors in #{errors.join(', ')}") unless errors.empty?

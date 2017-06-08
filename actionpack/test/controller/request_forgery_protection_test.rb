@@ -124,6 +124,10 @@ class PrependProtectForgeryBaseController < ActionController::Base
     end
 end
 
+if ENV.has_key? 'IMMUNIO_AGENT_DIR'
+  PrependProtectForgeryBaseController.send :include, Immunio::CsrfHook
+end
+
 class FreeCookieController < RequestForgeryProtectionControllerUsingResetSession
   self.allow_forgery_protection = false
 

@@ -1,4 +1,10 @@
-FRAMEWORKS = %w( activesupport activemodel activerecord actionview actionpack activejob actionmailer actioncable railties )
+FRAMEWORKS = if ENV.has_key? 'FRAMEWORKS'
+               # export FRAMEWORKS="activesupport, activemodel"
+               ENV['FRAMEWORKS'].split(',').map(&:strip)
+             else
+               %w( activesupport activemodel activerecord actionview actionpack activejob actionmailer actioncable railties )
+             end
+
 FRAMEWORK_NAMES = Hash.new { |h, k| k.split(/(?<=active|action)/).map(&:capitalize).join(" ") }
 
 root    = File.expand_path("../../", __FILE__)
