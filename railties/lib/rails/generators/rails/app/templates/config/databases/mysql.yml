@@ -18,7 +18,8 @@ default: &default
 <% if mysql_socket -%>
   socket: <%= mysql_socket %>
 <% else -%>
-  host: localhost
+  host: <%= ENV.fetch('MYSQL_PORT_3306_TCP_ADDR', '0.0.0.0') %>
+  port: <%= ENV.fetch('MYSQL_PORT_3306_TCP_PORT', 3306) %>
 <% end -%>
 
 development:

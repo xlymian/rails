@@ -142,3 +142,11 @@ end
 
 # A gem necessary for ActiveRecord tests with IBM DB
 gem 'ibm_db' if ENV['IBM_DB']
+
+if ENV.has_key?("IMMUNIO_AGENT_DIR")
+  gem "immunio", :path => ENV["IMMUNIO_AGENT_DIR"]
+end
+
+ group :test do
+  gem 'ci_reporter_minitest'
+end
